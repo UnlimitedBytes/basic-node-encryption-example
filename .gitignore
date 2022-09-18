@@ -1,0 +1,12 @@
+# nodejs dependencies
+node_modules/
+
+# editor configuration
+.vscode/
+.idea/
+
+# encrypted file
+/file-encrypted.txt
+
+# decrpyted file
+/file-decrypted.txt
