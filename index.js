@@ -41,9 +41,9 @@ function encrypt() {
         // cypher ( the cypher we will use to encrypt the data )
         // we will use the AES ( Advanced Encryption Standard ) algorithm
         // we will use a 256 bit ( 32 bytes ) long key for the algorithm
-        // we will use the algorithm in CBC ( Cipher Block Chaining ) mode
+        // we will use the algorithm in CTR ( Counter ) mode
         // we will give the algorithm our generated iv and derived key
-        const cypher = crypto.createCipheriv('aes-256-cbc', key, iv);
+        const cypher = crypto.createCipheriv('aes-256-ctr', key, iv);
 
         // the iv can be published it only needs to be unpredictable random
         // when we encode the data to prevent attacks on the cipher algorithm
@@ -102,9 +102,9 @@ function decrypt() {
         // cypher ( the cypher we will use to decrypt the data )
         // we will use the AES ( Advanced Encryption Standard ) algorithm
         // we will use a 256 bit ( 32 bytes ) long key for the algorithm
-        // we will use the algorithm in CBC ( Cipher Block Chaining ) mode
+        // we will use the algorithm in CTR ( Counter ) mode
         // we will give the algorithm our received iv and derived key
-        const cypher = crypto.createDecipheriv('aes-256-cbc', key, iv);
+        const cypher = crypto.createDecipheriv('aes-256-ctr', key, iv);
 
         // now we pipe the input stream through the cypher stream
         // and pipe the final product to the output stream.
